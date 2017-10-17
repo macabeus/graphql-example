@@ -100,7 +100,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aXU-WJ-HZ3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Posts" image="user" id="3VI-jN-pmF"/>
+                    <tabBarItem key="tabBarItem" title="My Posts" image="sketchpad" id="3VI-jN-pmF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7i-vV-NFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,7 +125,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="cAJ-YM-pBO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="sketchpad" id="7h4-o3-rrB"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="user" id="7h4-o3-rrB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgt-9r-u6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
