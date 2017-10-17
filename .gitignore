@@ -1,0 +1,54 @@
+.DS_Store
+
+###
+# Xcode
+## User settings
+xcuserdata/
+
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+*.xcscmblueprint
+*.xccheckout
+
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
+build/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+Pods/
+
+###
+# Elixir
+
+# App artifacts
+Server-Elixir/_build
+Server-Elixir/db
+Server-Elixir/deps
+Server-Elixir/*.ez
+
+# Generated on crash by the VM
+erl_crash.dump
+
+# Static artifacts
+Server-Elixir/node_modules
+
+# Since we are building assets from web/static,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+Server-Elixir/priv/static/
+
+# The config/prod.secret.exs file by default contains sensitive
+# data and you should not commit it into version control.
+#
+# Alternatively, you may comment the line below and commit the
+# secrets file as long as you replace its contents by environment
+# variables.
+Server-Elixir/config/prod.secret.exs
+
