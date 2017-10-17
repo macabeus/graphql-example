@@ -26,6 +26,9 @@ defmodule Myapp.User do
     struct
     |> cast(params, [:name, :username, :password])
     |> validate_required([:username, :password])
+    |> unique_constraint(:username, message: "that username is already taken")
+    |> validate_length(:username, min: 6)
+    |> validate_length(:password, min: 6)
     |> put_pass_hash()
   end
 

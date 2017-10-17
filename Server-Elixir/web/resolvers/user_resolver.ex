@@ -1,13 +1,19 @@
 defmodule Myapp.UserResolver do
+  import Myapp.ResolversMisc
   alias Myapp.Repo
   alias Myapp.User
   #alias Myapp.Post
   alias Myapp.Like
 
   def create(params, _info) do
-    %User{}
+    insert_result = %User{}
     |> User.registration_changeset(params)
     |> Repo.insert
+
+    case insert_result do
+      {:ok, changeset} -> {:ok, changeset}
+      {_, changeset} -> {:error, format_errors_messages(changeset)}
+    end
   end
 
   def login(params, _info) do
