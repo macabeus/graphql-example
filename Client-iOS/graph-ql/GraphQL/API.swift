@@ -83,6 +83,89 @@ public final class UserLoginMutation: GraphQLMutation {
   }
 }
 
+public final class CreateUserMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation CreateUser($username: String!, $password: String!, $name: String) {\n  createUser(username: $username, password: $password, name: $name) {\n    __typename\n    id\n  }\n}"
+
+  public var username: String
+  public var password: String
+  public var name: String?
+
+  public init(username: String, password: String, name: String? = nil) {
+    self.username = username
+    self.password = password
+    self.name = name
+  }
+
+  public var variables: GraphQLMap? {
+    return ["username": username, "password": password, "name": name]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["RootMutationType"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("createUser", arguments: ["username": GraphQLVariable("username"), "password": GraphQLVariable("password"), "name": GraphQLVariable("name")], type: .object(CreateUser.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(createUser: CreateUser? = nil) {
+      self.init(snapshot: ["__typename": "RootMutationType", "createUser": createUser.flatMap { $0.snapshot }])
+    }
+
+    public var createUser: CreateUser? {
+      get {
+        return (snapshot["createUser"] as? Snapshot).flatMap { CreateUser(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "createUser")
+      }
+    }
+
+    public struct CreateUser: GraphQLSelectionSet {
+      public static let possibleTypes = ["User"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .scalar(GraphQLID.self)),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "User", "id": id])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return snapshot["id"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+    }
+  }
+}
+
 public final class GetPostsQuery: GraphQLQuery {
   public static let operationString =
     "query GetPosts {\n  posts {\n    __typename\n    title\n    body\n  }\n}"

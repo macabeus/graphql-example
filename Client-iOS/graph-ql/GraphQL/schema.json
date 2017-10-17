@@ -743,6 +743,57 @@
             {
               "type": {
                 "ofType": null,
+                "name": "User",
+                "kind": "OBJECT"
+              },
+              "name": "createUser",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "String",
+                    "kind": "SCALAR"
+                  },
+                  "name": "name",
+                  "description": null,
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "password",
+                  "description": null,
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "username",
+                  "description": null,
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": null,
                 "name": "Post",
                 "kind": "OBJECT"
               },
