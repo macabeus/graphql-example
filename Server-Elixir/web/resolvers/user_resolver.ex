@@ -4,6 +4,12 @@ defmodule Myapp.UserResolver do
   #alias Myapp.Post
   alias Myapp.Like
 
+  def create(params, _info) do
+    %User{}
+    |> User.registration_changeset(params)
+    |> Repo.insert
+  end
+
   def login(params, _info) do
     with {:ok, user} <- Myapp.Session.authenticate(params, Repo),
          {:ok, jwt, _ } <- Guardian.encode_and_sign(user, :access) do

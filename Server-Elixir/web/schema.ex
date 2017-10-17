@@ -30,6 +30,14 @@ defmodule Myapp.Schema do
   end
 
   mutation do
+    field :create_user, type: :user do
+      arg :username, non_null(:string)
+      arg :password, non_null(:string)
+      arg :name, :string
+
+      resolve &Myapp.UserResolver.create/2
+    end
+
     field :create_post, type: :post do
       arg :title, non_null(:string)
       arg :body, non_null(:string)
