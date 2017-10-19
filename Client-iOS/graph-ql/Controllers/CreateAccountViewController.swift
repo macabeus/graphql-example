@@ -21,23 +21,7 @@ class CreateAccountViewController: UIViewController {
 
         let mutation = CreateUserMutation(username: username, password: password, name: name)
         ApolloSession.shared.client.perform(mutation: mutation) { result, error in
-            if let error = error {
-                let alert = UIAlertController(title: "Error!", message: "\(error)", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
-
-                self.present(alert, animated: true, completion: nil)
-                return
-            }
-
-            if let error = result?.errors {
-                let errorsMessage = error.humanlyReadable()
-
-                let alert = UIAlertController(title: "Error!", message: errorsMessage, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
-
-                self.present(alert, animated: true, completion: nil)
-                return
-            }
+            if self.showAlertErrorIfHave(resultErrors: result?.errors, error: error) { return }
 
             let loginMutation = UserLoginMutation(username: username, password: password)
             ApolloSession.shared.client.perform(mutation: loginMutation) { result, error in

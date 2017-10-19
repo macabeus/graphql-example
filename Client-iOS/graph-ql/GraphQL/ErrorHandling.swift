@@ -18,3 +18,27 @@ extension Sequence where Iterator.Element == GraphQLError {
             .joined(separator: "\n\n")
     }
 }
+
+extension UIViewController {
+    func showAlertErrorIfHave(resultErrors: [GraphQLError]?, error: Error?) -> Bool {
+        if let error = error {
+            let alert = UIAlertController(title: "Error!", message: "\(error)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+
+            self.present(alert, animated: true, completion: nil)
+            return true
+        }
+
+        if let error = resultErrors {
+            let errorsMessage = error.humanlyReadable()
+
+            let alert = UIAlertController(title: "Error!", message: errorsMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+
+            self.present(alert, animated: true, completion: nil)
+            return true
+        }
+
+        return false
+    }
+}
