@@ -13,7 +13,7 @@ class ApolloSession {
     static let shared = ApolloSession()
 
     let endpointUrl = URL(string: "http://localhost:4000/api")!
-    var token: String? {
+    private var token: String? {
         didSet {
             updateApolloClient()
         }
@@ -23,6 +23,10 @@ class ApolloSession {
 
     private init() {
         updateApolloClient()
+    }
+
+    func setNewSession(token: String) {
+        self.token = "Bearer \(token)"
     }
 
     private func updateApolloClient() {

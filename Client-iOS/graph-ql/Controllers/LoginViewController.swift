@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
                 return
             }
 
-            ApolloSession.shared.token = "Bearer \(token)"
+            ApolloSession.shared.setNewSession(token: token)
             self.performSegue(withIdentifier: "Posts View", sender: sender)
         }
     }

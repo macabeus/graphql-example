@@ -43,15 +43,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-ac-4eh">
                                         <rect key="frame" x="0.0" y="70" width="150" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xu5-Bi-L4h">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
-                                                <state key="normal" title="New Account"/>
-                                                <connections>
-                                                    <segue destination="MyT-IB-kA7" kind="presentation" id="lB5-xR-8jl"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f54-mM-fMY">
-                                                <rect key="frame" x="112" y="0.0" width="38" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
                                                     <action selector="buttonLogin:" destination="mmw-Ka-btP" eventType="touchUpInside" id="zbi-Hi-sQs"/>
@@ -60,12 +53,24 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="eqt-ac-4eh" firstAttribute="centerX" secondItem="gQR-6T-dpR" secondAttribute="centerX" id="WAl-O4-82L"/>
+                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xu5-Bi-L4h">
+                                <rect key="frame" x="45" y="414" width="231" height="30"/>
+                                <state key="normal" title="Don't have a account? Create one"/>
+                                <connections>
+                                    <segue destination="MyT-IB-kA7" kind="presentation" id="lB5-xR-8jl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gQR-6T-dpR" firstAttribute="centerX" secondItem="xRh-yN-sUW" secondAttribute="centerX" id="ASR-Jl-lm0"/>
+                            <constraint firstItem="xu5-Bi-L4h" firstAttribute="centerX" secondItem="xRh-yN-sUW" secondAttribute="centerX" id="JgP-P6-Ie3"/>
                             <constraint firstItem="gQR-6T-dpR" firstAttribute="centerY" secondItem="xRh-yN-sUW" secondAttribute="centerY" constant="-50" id="ZTo-kv-6Zx"/>
+                            <constraint firstItem="xu5-Bi-L4h" firstAttribute="top" secondItem="huG-un-Iz2" secondAttribute="bottom" constant="150" id="sMc-nJ-IFC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xRh-yN-sUW"/>
                     </view>
