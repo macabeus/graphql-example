@@ -19,6 +19,7 @@
 		89AFF3CE1F94E5FE00D07A30 /* Posts.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 89AFF3CD1F94E5FE00D07A30 /* Posts.graphql */; };
 		89AFF3D01F94F54400D07A30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AFF3CF1F94F54400D07A30 /* LoginViewController.swift */; };
 		89B119831F98659E002C48A7 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B119821F98659E002C48A7 /* ErrorHandling.swift */; };
+		89B119891F995BD2002C48A7 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B119881F995BD2002C48A7 /* PostCell.swift */; };
 		89D96B0D1F96836200F5E777 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D96B0C1F96836200F5E777 /* CreateAccountViewController.swift */; };
 		99B9056DBED5C06CB7235023 /* Pods_graph_ql.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06694949DD3E2971D4018853 /* Pods_graph_ql.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		89AFF3CD1F94E5FE00D07A30 /* Posts.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Posts.graphql; sourceTree = "<group>"; };
 		89AFF3CF1F94F54400D07A30 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		89B119821F98659E002C48A7 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		89B119881F995BD2002C48A7 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		89D96B0C1F96836200F5E777 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		A9E5519AB056B2FF065E3BAC /* Pods-graph-ql.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-graph-ql.debug.xcconfig"; path = "Pods/Target Support Files/Pods-graph-ql/Pods-graph-ql.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 			children = (
 				89AFF3CC1F94E5B100D07A30 /* GraphQL */,
 				89D96B091F95AA9A00F5E777 /* Models */,
+				89B119871F995B85002C48A7 /* Views */,
 				89D96B0A1F95AB5800F5E777 /* Controllers */,
 				890DA8971F9315A2007C022B /* AppDelegate.swift */,
 				890DA89B1F9315A2007C022B /* Main.storyboard */,
@@ -107,6 +110,14 @@
 				890DA8AA1F931F81007C022B /* API.swift */,
 			);
 			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		89B119871F995B85002C48A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89B119881F995BD2002C48A7 /* PostCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		89D96B091F95AA9A00F5E777 /* Models */ = {
@@ -287,6 +298,7 @@
 				895C220F1F9576F500B24035 /* Posts.swift in Sources */,
 				890DA8AB1F931F81007C022B /* API.swift in Sources */,
 				895C220D1F9576D900B24035 /* TableViewControllerPosts.swift in Sources */,
+				89B119891F995BD2002C48A7 /* PostCell.swift in Sources */,
 				89B119831F98659E002C48A7 /* ErrorHandling.swift in Sources */,
 				895C220B1F956F1200B24035 /* ApolloSession.swift in Sources */,
 				890DA8981F9315A2007C022B /* AppDelegate.swift in Sources */,

@@ -55,11 +55,11 @@ class TableViewControllerPosts: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentValue = tableDataSource[indexPath.section]
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellDefault") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell else {
             return UITableViewCell()
         }
 
-        cell.textLabel?.text = currentValue.name
+        cell.labelTitle.text = currentValue.name
 
         return cell
     }
