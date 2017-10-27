@@ -23,23 +23,12 @@ class TableViewControllerPosts: UITableViewController {
     }
 
     func fetchPosts() {
-        let getPostQuery = GetPostsQuery()
-        ApolloSession.shared.client.fetch(query: getPostQuery) { result, error in
-            if let error = error {
-                print(#function, "ERROR | An error occured: \(error)")
-                return
-            }
-
-            guard let posts = result?.data?.posts else {
-                print(#function, "ERROR | Could not retrieve trainer")
-                return
-            }
-
-            self.tableDataSource = posts.map {
-                Post(
-                    name: $0?.title ?? "no title",
-                    body: $0?.body ?? ""
-                )
+        PostsRequest.fetch { result in
+            switch result {
+            case .error(let requestError):
+                self.showAlertError(requestError)
+            case .success(let posts):
+                self.tableDataSource = posts
             }
         }
     }
