@@ -14,20 +14,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var textFieldPassword: UITextField!
     
     @IBAction func buttonLogin(_ sender: Any) {
-        guard let userName = textFieldUserName.text else { return }
+        guard let username = textFieldUserName.text else { return }
         guard let password = textFieldPassword.text else { return }
 
-        let loginMutation = UserLoginMutation(username: userName, password: password)
-        ApolloSession.shared.client.perform(mutation: loginMutation) { result, error in
-            if self.showAlertErrorIfHave(resultErrors: result?.errors, error: error) { return }
-
-            guard let token = result?.data?.login?.token else {
-                print(#function, "ERROR | Could not retrieve token")
-                return
+        UsersRequest.login(username: username, password: password) { result in
+            switch result {
+            case .error(let requestError):
+                self.showAlertError(requestError)
+            case .success(let token):
+                ApolloSession.shared.setNewSession(token: token)
+                self.performSegue(withIdentifier: "Posts View", sender: sender)
             }
-
-            ApolloSession.shared.setNewSession(token: token)
-            self.performSegue(withIdentifier: "Posts View", sender: sender)
         }
     }
 }
