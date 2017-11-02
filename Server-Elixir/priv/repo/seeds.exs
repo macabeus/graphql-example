@@ -16,7 +16,7 @@ alias Myapp.Repo
 alias Myapp.Like
 
 %User{}
-|> User.registration_changeset(%{name: "Ryan Swapp", username: "ryan", password: "ryan"})
+|> User.registration_changeset(%{name: "Ryan Swapp", username: "ryanswapp", password: "ryan123"})
 |> Repo.insert!
 
 %User{}
