@@ -6,15 +6,17 @@ defmodule Myapp.Post do
     field :title, :string
     field :body, :string
     field :count_likes, :integer
+    field :liked, :boolean, virtual: true
     belongs_to :user, Myapp.User, foreign_key: :user_id
     has_many :likes, Myapp.Like, on_delete: :delete_all
 
     timestamps()
   end
 
-  @doc """
-  Builds a changeset based on the `struct` and `params`.
-  """
+  def liked(post, user_id) do
+    Enum.find(post.likes, &(&1.user_id == user_id)) != nil
+  end
+
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:title, :body, :user_id])

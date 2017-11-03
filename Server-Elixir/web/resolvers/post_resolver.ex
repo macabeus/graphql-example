@@ -10,6 +10,8 @@ defmodule Myapp.PostResolver do
       Post
       |> where(user_id: ^id)
       |> Repo.all
+      |> Repo.preload(likes: :post)
+      |> Enum.map(&(%{&1 | liked: Post.liked(&1, id)}))
 
     {:ok, posts}
   end

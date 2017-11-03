@@ -15,6 +15,8 @@ defmodule Myapp.Schema.Types do
     field :title, :string
     field :body, :string
     field :user, :user, resolve: assoc(:user)
+    field :count_likes, :integer
+    field :liked, :boolean
     field :like, list_of(:like), resolve: assoc(:likes)
   end
 
