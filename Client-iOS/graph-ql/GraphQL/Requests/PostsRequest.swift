@@ -27,8 +27,13 @@ class PostsRequest {
 
             let postsStruct = posts.map {
                 Post(
-                    name: $0?.title ?? "no title",
-                    body: $0?.body ?? ""
+                    name: $0?.title ?? "No title",
+                    body: $0?.body ?? "",
+                    countLikes: $0?.countLikes ?? 0,
+                    liked: $0?.liked ?? false,
+                    author: User(
+                        name: $0?.user?.name ?? "Unkown"
+                    )
                 )
             }
 

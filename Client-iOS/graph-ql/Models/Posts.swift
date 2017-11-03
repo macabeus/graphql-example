@@ -11,4 +11,7 @@ import Foundation
 struct Post {
     let name: String
     let body: String
+    var countLikes: Int
+    var liked: Bool
+    let author: User
 }

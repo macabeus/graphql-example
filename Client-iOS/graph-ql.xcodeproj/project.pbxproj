@@ -13,6 +13,7 @@
 		890DA8AB1F931F81007C022B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890DA8AA1F931F81007C022B /* API.swift */; };
 		890E76901FA2EA9C00676FF9 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E768F1FA2EA9C00676FF9 /* Posts.swift */; };
 		890E76921FA2EC0700676FF9 /* PostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E76911FA2EC0700676FF9 /* PostsRequest.swift */; };
+		891396EC1FAD262F00B1588B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891396EB1FAD262F00B1588B /* User.swift */; };
 		895C22091F94F65700B24035 /* Account.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 895C22081F94F65700B24035 /* Account.graphql */; };
 		895C220B1F956F1200B24035 /* ApolloSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C220A1F956F1200B24035 /* ApolloSession.swift */; };
 		895C220D1F9576D900B24035 /* TableViewControllerPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C220C1F9576D900B24035 /* TableViewControllerPosts.swift */; };
@@ -37,6 +38,7 @@
 		890DA8AA1F931F81007C022B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		890E768F1FA2EA9C00676FF9 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		890E76911FA2EC0700676FF9 /* PostsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsRequest.swift; sourceTree = "<group>"; };
+		891396EB1FAD262F00B1588B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		895C22081F94F65700B24035 /* Account.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Account.graphql; sourceTree = "<group>"; };
 		895C220A1F956F1200B24035 /* ApolloSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloSession.swift; sourceTree = "<group>"; };
 		895C220C1F9576D900B24035 /* TableViewControllerPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerPosts.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				890E768F1FA2EA9C00676FF9 /* Posts.swift */,
+				891396EB1FAD262F00B1588B /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				89B119831F98659E002C48A7 /* ErrorHandling.swift in Sources */,
 				895C220B1F956F1200B24035 /* ApolloSession.swift in Sources */,
 				890E76901FA2EA9C00676FF9 /* Posts.swift in Sources */,
+				891396EC1FAD262F00B1588B /* User.swift in Sources */,
 				890E76921FA2EC0700676FF9 /* PostsRequest.swift in Sources */,
 				890DA8981F9315A2007C022B /* AppDelegate.swift in Sources */,
 				89BA7EEC1FA2D92E0092F6E2 /* UsersRequest.swift in Sources */,

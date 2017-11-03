@@ -821,7 +821,7 @@
             {
               "type": {
                 "ofType": null,
-                "name": "Post",
+                "name": "Like",
                 "kind": "OBJECT"
               },
               "name": "likePost",
@@ -840,20 +840,6 @@
                     "kind": "NON_NULL"
                   },
                   "name": "postId",
-                  "description": null,
-                  "defaultValue": null
-                },
-                {
-                  "type": {
-                    "ofType": {
-                      "ofType": null,
-                      "name": "Int",
-                      "kind": "SCALAR"
-                    },
-                    "name": null,
-                    "kind": "NON_NULL"
-                  },
-                  "name": "userId",
                   "description": null,
                   "defaultValue": null
                 }
@@ -1000,6 +986,18 @@
             {
               "type": {
                 "ofType": null,
+                "name": "Int",
+                "kind": "SCALAR"
+              },
+              "name": "countLikes",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
                 "name": "ID",
                 "kind": "SCALAR"
               },
@@ -1020,6 +1018,18 @@
                 "kind": "LIST"
               },
               "name": "like",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Boolean",
+                "kind": "SCALAR"
+              },
+              "name": "liked",
               "isDeprecated": false,
               "description": null,
               "deprecationReason": null,

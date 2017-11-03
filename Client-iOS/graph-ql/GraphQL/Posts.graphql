@@ -1,6 +1,11 @@
 query GetPosts {
     posts {
         title,
-        body
+        body,
+        countLikes,
+        liked,
+        user {
+            name
+        }
     }
 }
