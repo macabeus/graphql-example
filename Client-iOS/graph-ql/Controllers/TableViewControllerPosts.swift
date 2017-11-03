@@ -42,13 +42,16 @@ class TableViewControllerPosts: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentValue = tableDataSource[indexPath.section]
+        let currentPost = tableDataSource[indexPath.section]
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell else {
             return UITableViewCell()
         }
 
-        cell.labelTitle.text = currentValue.name
+        cell.labelTitle.text = currentPost.name
+        cell.labelAuthor.text = currentPost.author.name
+        cell.labelLikeCount.text = "\(currentPost.countLikes)"
+        cell.setLiked(state: currentPost.liked)
 
         return cell
     }

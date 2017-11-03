@@ -355,6 +355,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imageLike" destination="Z18-pT-gNK" id="4S1-WS-Nje"/>
                                     <outlet property="labelAuthor" destination="pzc-nu-oEJ" id="lEw-3Q-KeJ"/>
                                     <outlet property="labelLikeCount" destination="brj-4E-A1P" id="OFg-av-thd"/>
                                     <outlet property="labelTitle" destination="cK5-8F-zJg" id="wFj-xQ-wBL"/>
