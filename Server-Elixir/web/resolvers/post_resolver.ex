@@ -1,5 +1,6 @@
 defmodule Myapp.PostResolver do
   import Ecto.Query, only: [where: 2]
+  import Myapp.ResolversMisc
   alias Myapp.Repo
   alias Myapp.Post
   alias Myapp.Like
@@ -36,10 +37,15 @@ defmodule Myapp.PostResolver do
     end
   end
 
-  def add_like(args, _info) do
-    %Like{}
-    |> Like.changeset(args)
-    |> Repo.insert
-    # todo: retornar melhor as mensagens de erro
+  def add_like(args, %{context: %{current_user: %{id: id}}}) do
+    add_like_params = %{post_id: args.post_id, user_id: id}
+    case Repo.transaction(Like.add_like(add_like_params)) do
+      {:ok, changeset} -> {:ok, changeset.likes}
+      {_, _, changeset, _} -> {:error, format_errors_messages(changeset)}
+    end
+  end
+
+  def add_like(_args, _info) do
+    {:error, "Not Authorized"}
   end
 end

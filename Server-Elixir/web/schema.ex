@@ -73,8 +73,7 @@ defmodule Myapp.Schema do
       resolve &Myapp.PostResolver.delete/2
     end
 
-    field :like_post, type: :post do
-      arg :user_id, non_null(:integer)
+    field :like_post, type: :like do
       arg :post_id, non_null(:integer)
 
       resolve &Myapp.PostResolver.add_like/2

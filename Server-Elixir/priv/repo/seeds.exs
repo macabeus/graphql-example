@@ -35,9 +35,7 @@ end
 for post_index <- 1..10 do
   for user_index <- 1..2 do
     if Enum.random(0..1) == 0 do
-      %Like{}
-      |> Like.changeset(%{post_id: post_index, user_id: user_index})
-      |> Repo.insert!
+      Repo.transaction(Like.add_like(%{post_id: post_index, user_id: user_index}))
     end
   end
 end
