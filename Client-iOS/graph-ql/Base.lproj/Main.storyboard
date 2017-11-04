@@ -81,7 +81,7 @@
                                 <rect key="frame" x="45" y="402.5" width="231" height="30"/>
                                 <state key="normal" title="Don't have a account? Create one"/>
                                 <connections>
-                                    <segue destination="MyT-IB-kA7" kind="presentation" id="lB5-xR-8jl"/>
+                                    <segue destination="1Jk-Qq-Jb8" kind="presentation" id="lB5-xR-8jl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -105,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="-868" y="84"/>
         </scene>
-        <!--Create Account View Controller-->
+        <!--New account-->
         <scene sceneID="ehl-T8-Hqc">
             <objects>
                 <viewController id="MyT-IB-kA7" customClass="CreateAccountViewController" customModule="graph_ql" sceneMemberID="viewController">
@@ -114,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y25-RR-KSc">
-                                <rect key="frame" x="10" y="30" width="300" height="342"/>
+                                <rect key="frame" x="10" y="74" width="300" height="342"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lHd-iQ-YRm">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="55.5"/>
@@ -203,24 +203,27 @@
                                     <constraint firstAttribute="trailing" secondItem="8sk-VY-1HM" secondAttribute="trailing" id="uBU-Sr-a0a"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcH-0D-yMV">
-                                <rect key="frame" x="91" y="392" width="138" height="30"/>
-                                <state key="normal" title="Create new account"/>
-                                <connections>
-                                    <action selector="buttonCreateAccount:" destination="MyT-IB-kA7" eventType="touchUpInside" id="z2y-1w-AUx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Y25-RR-KSc" firstAttribute="leading" secondItem="ZOo-LO-pDq" secondAttribute="leading" constant="10" id="fiT-Yt-9jR"/>
-                            <constraint firstItem="VcH-0D-yMV" firstAttribute="centerX" secondItem="ZOo-LO-pDq" secondAttribute="centerX" id="gJ1-w3-rjq"/>
                             <constraint firstItem="Y25-RR-KSc" firstAttribute="top" secondItem="ZOo-LO-pDq" secondAttribute="top" constant="10" id="gXt-MG-Uzz"/>
-                            <constraint firstItem="VcH-0D-yMV" firstAttribute="top" secondItem="8sk-VY-1HM" secondAttribute="bottom" constant="20" id="siR-ey-5sg"/>
                             <constraint firstItem="ZOo-LO-pDq" firstAttribute="trailing" secondItem="Y25-RR-KSc" secondAttribute="trailing" constant="10" id="ysH-zL-9c6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZOo-LO-pDq"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New account" id="nYm-jE-arG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Dcp-Ym-2hn">
+                            <connections>
+                                <action selector="buttonCancel:" destination="MyT-IB-kA7" id="DRV-KQ-oQr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zli-xj-L2N">
+                            <connections>
+                                <action selector="buttonCreateAccount:" destination="MyT-IB-kA7" id="P73-1r-k7H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textFieldName" destination="JPI-ad-1gv" id="Are-SG-KBi"/>
                         <outlet property="textFieldPassword" destination="qFe-NF-ab0" id="Iy2-rW-gDU"/>
@@ -229,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93b-Oq-5gy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="827.13643178410803"/>
+            <point key="canvasLocation" x="-868" y="1581"/>
         </scene>
         <!--My Posts-->
         <scene sceneID="Olr-4B-GiH">
@@ -284,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgt-9r-u6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069" y="579"/>
+            <point key="canvasLocation" x="1466.25" y="578.87323943661977"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xSG-Ok-Zpf">
@@ -551,6 +554,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVq-46-JlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1973" y="-154"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WEC-Wi-tzB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Jk-Qq-Jb8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VeH-3j-aRX">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MyT-IB-kA7" kind="relationship" relationship="rootViewController" id="0Ku-k8-VVI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Jq-ol-Hy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-868.125" y="827.11267605633805"/>
         </scene>
     </scenes>
     <resources>

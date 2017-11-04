@@ -50,4 +50,8 @@ class CreateAccountViewController: UIViewController {
             }
         }
     }
+
+    @IBAction func buttonCancel(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
 }
