@@ -9,7 +9,6 @@
 import UIKit
 
 class TableViewControllerPosts: UITableViewController {
-
     var tableDataSource: [Post] = [] {
         didSet {
             tableView.reloadData()
@@ -54,5 +53,17 @@ class TableViewControllerPosts: UITableViewController {
         cell.setLiked(state: currentPost.liked)
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard
+            let storyboard = self.storyboard,
+            let controller = storyboard.instantiateViewController(withIdentifier: "PostDetail") as? PostDetailViewController,
+            let navigationController = self.navigationController else {
+                return
+        }
+
+        controller.currentPost = tableDataSource[indexPath.section]
+        navigationController.pushViewController(controller, animated: true)
     }
 }
