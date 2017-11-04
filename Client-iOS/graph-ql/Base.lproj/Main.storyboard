@@ -114,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y25-RR-KSc">
-                                <rect key="frame" x="10" y="74" width="300" height="342"/>
+                                <rect key="frame" x="10" y="74" width="300" height="186.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lHd-iQ-YRm">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="55.5"/>
@@ -150,7 +150,7 @@
                                                 <rect key="frame" x="0.0" y="25.5" width="300" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -177,30 +177,11 @@
                                             <constraint firstAttribute="trailing" secondItem="JPI-ad-1gv" secondAttribute="trailing" id="nXy-Kp-dur"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8sk-VY-1HM">
-                                        <rect key="frame" x="0.0" y="196.5" width="300" height="145.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avatar (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKs-5q-iY7">
-                                                <rect key="frame" x="0.0" y="0.0" width="126" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boy" translatesAutoresizingMaskIntoConstraints="NO" id="Me8-Yi-Tmp">
-                                                <rect key="frame" x="0.0" y="25.5" width="120" height="120"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="RaH-Y8-YIL"/>
-                                                    <constraint firstAttribute="width" constant="120" id="cWw-UA-UtX"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="BoJ-Hn-Vcn" secondAttribute="trailing" id="ORj-Br-0Wg"/>
                                     <constraint firstItem="lHd-iQ-YRm" firstAttribute="width" secondItem="Y25-RR-KSc" secondAttribute="width" id="lK6-q9-hR2"/>
                                     <constraint firstAttribute="trailing" secondItem="5xN-UZ-vRt" secondAttribute="trailing" id="nr1-yq-m6X"/>
-                                    <constraint firstAttribute="trailing" secondItem="8sk-VY-1HM" secondAttribute="trailing" id="uBU-Sr-a0a"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -575,7 +556,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="boy" width="128" height="128"/>
         <image name="like" width="700" height="700"/>
         <image name="sketchpad" width="24" height="24"/>
         <image name="user" width="24" height="24"/>
