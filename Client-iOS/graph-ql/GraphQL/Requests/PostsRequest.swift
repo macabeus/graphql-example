@@ -14,7 +14,7 @@ class PostsRequest {
     static func fetch(completion: @escaping (RequestResult<[Post]>) -> Void) {
         let query = GetPostsQuery()
 
-        ApolloSession.shared.client.fetch(query: query) { result, error in
+        ApolloSession.shared.client.fetch(query: query, cachePolicy: .fetchIgnoringCacheData) { result, error in
             if let requestError = RequestError.check(resultErrors: result?.errors, error: error) {
                 completion(.error(requestError))
                 return

@@ -15,9 +15,7 @@ class TableViewControllerPosts: UITableViewController {
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewDidAppear(_ animated: Bool) {
         fetchPosts()
     }
 
