@@ -14,10 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var textFieldPassword: UITextField!
     
     @IBAction func buttonLogin(_ sender: Any) {
-        //guard let username = textFieldUserName.text else { return }
-        //guard let password = textFieldPassword.text else { return }
-        let username = "macabeus"
-        let password = "macabeus"
+        guard let username = textFieldUserName.text else { return }
+        guard let password = textFieldPassword.text else { return }
 
         UsersRequest.login(username: username, password: password) { result in
             switch result {
