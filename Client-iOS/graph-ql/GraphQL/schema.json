@@ -723,20 +723,6 @@
                   "name": "title",
                   "description": null,
                   "defaultValue": null
-                },
-                {
-                  "type": {
-                    "ofType": {
-                      "ofType": null,
-                      "name": "Int",
-                      "kind": "SCALAR"
-                    },
-                    "name": null,
-                    "kind": "NON_NULL"
-                  },
-                  "name": "userId",
-                  "description": null,
-                  "defaultValue": null
                 }
               ]
             },

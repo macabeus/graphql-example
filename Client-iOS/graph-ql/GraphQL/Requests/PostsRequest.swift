@@ -44,6 +44,25 @@ class PostsRequest {
         }
     }
 
+    static func createPost(title: String, body: String, completion: @escaping (RequestResult<Int>) -> Void) {
+        let mutation = CreatePostMutation(title: title, body: body)
+
+        ApolloSession.shared.client.perform(mutation: mutation) { result, error in
+            if let requestError = RequestError.check(resultErrors: result?.errors, error: error) {
+                completion(.error(requestError))
+                return
+            }
+
+            guard let postIdString = result?.data?.createPost?.id,
+                let postId = Int(postIdString) else {
+                completion(.error(.withoutData))
+                return
+            }
+
+            completion(.success(postId))
+        }
+    }
+
     static func CreateLike(post: Post, completion: @escaping (RequestResult<Int>) -> Void) {
         let mutation = CreateLikeMutation(postId: post.id)
 
