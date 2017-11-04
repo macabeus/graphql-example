@@ -50,4 +50,15 @@ defmodule Myapp.PostResolver do
   def add_like(_args, _info) do
     {:error, "Not Authorized"}
   end
+
+  def delete_like(args, %{context: %{current_user: %{id: id}}}) do
+    case Repo.transaction(Like.delete_like(args.post_id, id)) do
+      {:ok, changeset} -> {:ok, changeset.likes}
+      {_, _, changeset, _} -> {:error, format_errors_messages(changeset)}
+    end
+  end
+
+  def delete_like(_args, _info) do
+    {:error, "Not Authorized"}
+  end
 end

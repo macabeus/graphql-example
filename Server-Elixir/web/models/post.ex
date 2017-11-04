@@ -27,4 +27,9 @@ defmodule Myapp.Post do
     post = Repo.get!(Myapp.Post, id)
     cast(post, %{count_likes: post.count_likes + 1}, [:count_likes])
   end
+
+  def count_likes_dec(id) do
+    post = Repo.get!(Myapp.Post, id)
+    cast(post, %{count_likes: post.count_likes - 1}, [:count_likes])
+  end
 end
