@@ -824,6 +824,33 @@
                 "name": "Like",
                 "kind": "OBJECT"
               },
+              "name": "dislikePost",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Int",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "postId",
+                  "description": null,
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Like",
+                "kind": "OBJECT"
+              },
               "name": "likePost",
               "isDeprecated": false,
               "description": null,

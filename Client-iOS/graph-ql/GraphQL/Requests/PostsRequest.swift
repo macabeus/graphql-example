@@ -61,4 +61,22 @@ class PostsRequest {
             completion(.success(countLikes))
         }
     }
+
+    static func DeleteLike(post: Post, completion: @escaping (RequestResult<Int>) -> Void) {
+        let mutation = DeleteLikeMutation(postId: post.id)
+
+        ApolloSession.shared.client.perform(mutation: mutation) { result, error in
+            if let requestError = RequestError.check(resultErrors: result?.errors, error: error) {
+                completion(.error(requestError))
+                return
+            }
+
+            guard let countLikes = result?.data?.dislikePost?.post?.countLikes else {
+                completion(.error(.withoutData))
+                return
+            }
+
+            completion(.success(countLikes))
+        }
+    }
 }

@@ -18,3 +18,11 @@ mutation CreateLike($postId: Int!) {
         }
     }
 }
+
+mutation DeleteLike($postId: Int!) {
+    dislikePost(postId: $postId) {
+        post {
+            countLikes
+        }
+    }
+}
