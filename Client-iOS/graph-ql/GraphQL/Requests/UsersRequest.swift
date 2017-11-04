@@ -24,7 +24,7 @@ class UsersRequest {
         }
     }
 
-    static func login(username: String, password: String, completion: @escaping (RequestResult<String>) -> Void) {
+    static func login(username: String, password: String, completion: @escaping (RequestResult<(Int, String)>) -> Void) {
         let mutation = UserLoginMutation(username: username, password: password)
 
         ApolloSession.shared.client.perform(mutation: mutation) { result, error in
@@ -33,12 +33,15 @@ class UsersRequest {
                 return
             }
 
-            guard let token = result?.data?.login?.token else {
+            guard
+                let token = result?.data?.login?.token,
+                let userIdString = result?.data?.login?.user?.id,
+                let userId = Int(userIdString) else {
                 completion(.error(.withoutData))
                 return
             }
 
-            completion(.success(token))
+            completion(.success((userId, token)))
         }
     }
 }

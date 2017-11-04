@@ -31,8 +31,8 @@ class CreateAccountViewController: UIViewController {
                 switch result {
                 case .error(let requestError):
                     self.showAlertError(requestError)
-                case .success(let token):
-                    ApolloSession.shared.setNewSession(token: token)
+                case .success(let userId, let token):
+                    ApolloSession.shared.setNewSession(userId: userId, token: token)
 
                     guard let loginViewController = self.presentingViewController as? LoginViewController else {
                         let alert = UIAlertController(title: "Success", message: "Your account was create with success", preferredStyle: .alert)

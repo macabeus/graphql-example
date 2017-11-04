@@ -4,7 +4,7 @@ import Apollo
 
 public final class UserLoginMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UserLogin($username: String!, $password: String!) {\n  login(username: $username, password: $password) {\n    __typename\n    token\n  }\n}"
+    "mutation UserLogin($username: String!, $password: String!) {\n  login(username: $username, password: $password) {\n    __typename\n    user {\n      __typename\n      id\n    }\n    token\n  }\n}"
 
   public var username: String
   public var password: String
@@ -49,6 +49,7 @@ public final class UserLoginMutation: GraphQLMutation {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("user", type: .object(User.selections)),
         GraphQLField("token", type: .scalar(String.self)),
       ]
 
@@ -58,8 +59,8 @@ public final class UserLoginMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(token: String? = nil) {
-        self.init(snapshot: ["__typename": "Session", "token": token])
+      public init(user: User? = nil, token: String? = nil) {
+        self.init(snapshot: ["__typename": "Session", "user": user.flatMap { $0.snapshot }, "token": token])
       }
 
       public var __typename: String {
@@ -71,12 +72,58 @@ public final class UserLoginMutation: GraphQLMutation {
         }
       }
 
+      public var user: User? {
+        get {
+          return (snapshot["user"] as? Snapshot).flatMap { User(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "user")
+        }
+      }
+
       public var token: String? {
         get {
           return snapshot["token"] as? String
         }
         set {
           snapshot.updateValue(newValue, forKey: "token")
+        }
+      }
+
+      public struct User: GraphQLSelectionSet {
+        public static let possibleTypes = ["User"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "User", "id": id])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return snapshot["id"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
         }
       }
     }

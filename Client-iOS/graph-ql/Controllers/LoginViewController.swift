@@ -21,8 +21,8 @@ class LoginViewController: UIViewController {
             switch result {
             case .error(let requestError):
                 self.showAlertError(requestError)
-            case .success(let token):
-                ApolloSession.shared.setNewSession(token: token)
+            case .success(let userId, let token):
+                ApolloSession.shared.setNewSession(userId: userId, token: token)
                 self.performSegue(withIdentifier: "Posts View", sender: sender)
             }
         }

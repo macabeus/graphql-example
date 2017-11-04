@@ -18,6 +18,10 @@ class ApolloSession {
             updateApolloClient()
         }
     }
+    private var _userId: Int?
+    var userId: Int? {
+        return _userId
+    }
 
     var client: ApolloClient!
 
@@ -25,7 +29,8 @@ class ApolloSession {
         updateApolloClient()
     }
 
-    func setNewSession(token: String) {
+    func setNewSession(userId: Int, token: String) {
+        self._userId = userId
         self.token = "Bearer \(token)"
     }
 

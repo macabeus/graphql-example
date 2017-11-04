@@ -1097,7 +1097,18 @@
               "isDeprecated": false,
               "description": null,
               "deprecationReason": null,
-              "args": []
+              "args": [
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "Int",
+                    "kind": "SCALAR"
+                  },
+                  "name": "userId",
+                  "description": null,
+                  "defaultValue": null
+                }
+              ]
             },
             {
               "type": {
@@ -1160,6 +1171,18 @@
                 "kind": "SCALAR"
               },
               "name": "token",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "User",
+                "kind": "OBJECT"
+              },
+              "name": "user",
               "isDeprecated": false,
               "description": null,
               "deprecationReason": null,
