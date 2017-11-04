@@ -41,7 +41,6 @@ defmodule Myapp.Schema do
     field :create_post, type: :post do
       arg :title, non_null(:string)
       arg :body, non_null(:string)
-      arg :user_id, non_null(:integer)
 
       resolve &Myapp.PostResolver.create/2
     end

@@ -20,10 +20,15 @@ defmodule Myapp.PostResolver do
     {:error, "Not Authorized"}
   end
 
-  def create(args, _info) do
+  def create(args, %{context: %{current_user: %{id: id}}}) do
+    add_post_params = Map.put(args, :user_id, id)
     %Post{}
-    |> Post.changeset(args)
+    |> Post.changeset(add_post_params)
     |> Repo.insert
+  end
+
+  def create(_args, _info) do
+    {:error, "Not Authorized"}
   end
 
   def update(%{id: id, post: post_params}, _info) do
