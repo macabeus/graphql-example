@@ -168,7 +168,7 @@ public final class CreateUserMutation: GraphQLMutation {
 
 public final class GetPostsQuery: GraphQLQuery {
   public static let operationString =
-    "query GetPosts {\n  posts {\n    __typename\n    title\n    body\n    countLikes\n    liked\n    user {\n      __typename\n      name\n    }\n  }\n}"
+    "query GetPosts {\n  posts {\n    __typename\n    id\n    title\n    body\n    countLikes\n    liked\n    user {\n      __typename\n      name\n    }\n  }\n}"
 
   public init() {
   }
@@ -204,6 +204,7 @@ public final class GetPostsQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .scalar(GraphQLID.self)),
         GraphQLField("title", type: .scalar(String.self)),
         GraphQLField("body", type: .scalar(String.self)),
         GraphQLField("countLikes", type: .scalar(Int.self)),
@@ -217,8 +218,8 @@ public final class GetPostsQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(title: String? = nil, body: String? = nil, countLikes: Int? = nil, liked: Bool? = nil, user: User? = nil) {
-        self.init(snapshot: ["__typename": "Post", "title": title, "body": body, "countLikes": countLikes, "liked": liked, "user": user.flatMap { $0.snapshot }])
+      public init(id: GraphQLID? = nil, title: String? = nil, body: String? = nil, countLikes: Int? = nil, liked: Bool? = nil, user: User? = nil) {
+        self.init(snapshot: ["__typename": "Post", "id": id, "title": title, "body": body, "countLikes": countLikes, "liked": liked, "user": user.flatMap { $0.snapshot }])
       }
 
       public var __typename: String {
@@ -227,6 +228,15 @@ public final class GetPostsQuery: GraphQLQuery {
         }
         set {
           snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return snapshot["id"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
         }
       }
 
@@ -308,6 +318,122 @@ public final class GetPostsQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class CreateLikeMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation CreateLike($postId: Int!) {\n  likePost(postId: $postId) {\n    __typename\n    post {\n      __typename\n      countLikes\n    }\n  }\n}"
+
+  public var postId: Int
+
+  public init(postId: Int) {
+    self.postId = postId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["postId": postId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["RootMutationType"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("likePost", arguments: ["postId": GraphQLVariable("postId")], type: .object(LikePost.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(likePost: LikePost? = nil) {
+      self.init(snapshot: ["__typename": "RootMutationType", "likePost": likePost.flatMap { $0.snapshot }])
+    }
+
+    public var likePost: LikePost? {
+      get {
+        return (snapshot["likePost"] as? Snapshot).flatMap { LikePost(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "likePost")
+      }
+    }
+
+    public struct LikePost: GraphQLSelectionSet {
+      public static let possibleTypes = ["Like"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("post", type: .object(Post.selections)),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(post: Post? = nil) {
+        self.init(snapshot: ["__typename": "Like", "post": post.flatMap { $0.snapshot }])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var post: Post? {
+        get {
+          return (snapshot["post"] as? Snapshot).flatMap { Post(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "post")
+        }
+      }
+
+      public struct Post: GraphQLSelectionSet {
+        public static let possibleTypes = ["Post"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("countLikes", type: .scalar(Int.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(countLikes: Int? = nil) {
+          self.init(snapshot: ["__typename": "Post", "countLikes": countLikes])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var countLikes: Int? {
+          get {
+            return snapshot["countLikes"] as? Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "countLikes")
           }
         }
       }

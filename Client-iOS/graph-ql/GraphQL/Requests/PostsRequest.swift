@@ -25,19 +25,40 @@ class PostsRequest {
                 return
             }
 
-            let postsStruct = posts.map {
-                Post(
-                    name: $0?.title ?? "No title",
-                    body: $0?.body ?? "",
-                    countLikes: $0?.countLikes ?? 0,
-                    liked: $0?.liked ?? false,
+            let postsStruct = posts.flatMap { post -> Post? in
+                guard let idString = post?.id, let id = Int(idString) else { return nil }
+
+                return Post(
+                    id: id,
+                    name: post?.title ?? "No title",
+                    body: post?.body ?? "",
+                    countLikes: post?.countLikes ?? 0,
+                    liked: post?.liked ?? false,
                     author: User(
-                        name: $0?.user?.name ?? "Unkown"
+                        name: post?.user?.name ?? "Unkown"
                     )
                 )
             }
 
             completion(.success(postsStruct))
+        }
+    }
+
+    static func CreateLike(post: Post, completion: @escaping (RequestResult<Int>) -> Void) {
+        let mutation = CreateLikeMutation(postId: post.id)
+
+        ApolloSession.shared.client.perform(mutation: mutation) { result, error in
+            if let requestError = RequestError.check(resultErrors: result?.errors, error: error) {
+                completion(.error(requestError))
+                return
+            }
+
+            guard let countLikes = result?.data?.likePost?.post?.countLikes else {
+                completion(.error(.withoutData))
+                return
+            }
+
+            completion(.success(countLikes))
         }
     }
 }

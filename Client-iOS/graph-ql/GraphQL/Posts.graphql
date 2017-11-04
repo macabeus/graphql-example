@@ -1,11 +1,20 @@
 query GetPosts {
     posts {
+        id,
         title,
         body,
         countLikes,
         liked,
         user {
             name
+        }
+    }
+}
+
+mutation CreateLike($postId: Int!) {
+    likePost(postId: $postId) {
+        post {
+            countLikes
         }
     }
 }

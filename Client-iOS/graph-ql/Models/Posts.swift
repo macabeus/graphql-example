@@ -9,6 +9,7 @@
 import Foundation
 
 struct Post {
+    let id: Int
     let name: String
     let body: String
     var countLikes: Int
