@@ -21,6 +21,7 @@ defmodule Myapp.Schema.Types do
   end
 
   object :session do
+    field :user, :user
     field :token, :string
   end
 

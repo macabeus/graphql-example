@@ -19,7 +19,7 @@ defmodule Myapp.UserResolver do
   def login(params, _info) do
     with {:ok, user} <- Myapp.Session.authenticate(params, Repo),
          {:ok, jwt, _ } <- Guardian.encode_and_sign(user, :access) do
-      {:ok, %{token: jwt}}
+      {:ok, %{user: user, token: jwt}}
     end
   end
 
