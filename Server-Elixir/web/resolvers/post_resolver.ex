@@ -5,19 +5,30 @@ defmodule Myapp.PostResolver do
   alias Myapp.Post
   alias Myapp.Like
 
-  def all(_args, %{context: %{current_user: %{id: id}}}) do
-    posts =
-      Post
-      |> where(user_id: ^id)
-      |> Repo.all
-      |> Repo.preload(likes: :post)
-      |> Enum.map(&(%{&1 | liked: Post.liked(&1, id)}))
+  def fetch(args, info) do
+    # filter by user id, if requested
+    posts = case args do
+      %{user_id: filter_by_user_id} ->
+        Post
+        |> where(user_id: ^filter_by_user_id)
+        |> Repo.all
+      _ ->
+        Post
+        |> Repo.all
+    end
 
+    # mark if the post is liked or not, if the user is logged
+    posts = case info do
+      %{context: %{current_user: %{id: id}}} ->
+        posts
+        |> Repo.preload(likes: :post)
+        |> Enum.map(&(%{&1 | liked: Post.liked(&1, id)}))
+      _ ->
+        posts
+    end
+
+    #
     {:ok, posts}
-  end
-
-  def all(_args, _info) do
-    {:error, "Not Authorized"}
   end
 
   def create(args, %{context: %{current_user: %{id: id}}}) do

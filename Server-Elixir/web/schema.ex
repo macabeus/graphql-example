@@ -4,7 +4,9 @@ defmodule Myapp.Schema do
 
   query do
     field :posts, list_of(:post) do
-      resolve &Myapp.PostResolver.all/2
+      arg :user_id, :integer
+
+      resolve &Myapp.PostResolver.fetch/2
     end
 
     field :users, list_of(:user) do
