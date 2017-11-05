@@ -6,9 +6,32 @@
 
 A simple project (for studying purposes) to use GraphQL with Elixir as server and iOS as client.
 
-<img alt="Preview" src="https://media.giphy.com/media/xUOxfa1pN9mMRfSHMk/giphy.gif">
+This project is a simple blog app. You can write new posts and like a post.
 
-This project is a simple blog app. You can write posts and like the posts.
+<table>
+  <tr>
+    <td>
+      <img src="https://i.imgur.com/cPk3vOT.png">
+      Login
+    </td>
+    <td>
+      <img src="https://i.imgur.com/0ji4dh4.png">
+      New account
+    </td>
+    <td>
+      <img src="https://i.imgur.com/HnUCgrb.png">
+      Posts
+    </td>
+    <td>
+      <img src="https://i.imgur.com/YLhuWP8.png">
+      Post detail
+    </td>
+    <td>
+      <img src="https://i.imgur.com/nHPlGED.png">
+      Create a new post
+    </td>
+  </tr>
+</table>
 
 # Material
 
