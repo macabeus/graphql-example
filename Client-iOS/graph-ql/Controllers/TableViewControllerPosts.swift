@@ -81,7 +81,7 @@ class TableViewControllerPosts: UITableViewController {
                 return
         }
 
-        controller.currentPost = tableDataSource[indexPath.section]
+        controller.currentPost = tableDataSource[indexPath.section - 1]
         navigationController.pushViewController(controller, animated: true)
     }
 }
