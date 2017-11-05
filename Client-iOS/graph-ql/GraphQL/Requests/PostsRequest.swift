@@ -11,8 +11,8 @@ import Foundation
 class PostsRequest {
     private init() {}
 
-    static func fetch(completion: @escaping (RequestResult<[Post]>) -> Void) {
-        let query = GetPostsQuery()
+    static func fetch(userId: Int? = nil, completion: @escaping (RequestResult<[Post]>) -> Void) {
+        let query = GetPostsQuery(userId: userId)
 
         ApolloSession.shared.client.fetch(query: query, cachePolicy: .fetchIgnoringCacheData) { result, error in
             if let requestError = RequestError.check(resultErrors: result?.errors, error: error) {

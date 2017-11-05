@@ -1,5 +1,5 @@
-query GetPosts {
-    posts {
+query GetPosts($userId: Int) {
+    posts(userId: $userId) {
         id,
         title,
         body,

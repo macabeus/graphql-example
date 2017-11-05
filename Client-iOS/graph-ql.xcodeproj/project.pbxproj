@@ -16,6 +16,7 @@
 		891396EC1FAD262F00B1588B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891396EB1FAD262F00B1588B /* User.swift */; };
 		891396EE1FAD689E00B1588B /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891396ED1FAD689E00B1588B /* PostDetailViewController.swift */; };
 		893B23BD1FAE1F7E005EABFC /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B23BC1FAE1F7E005EABFC /* CreatePostViewController.swift */; };
+		893B23BF1FAE8A26005EABFC /* ConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B23BE1FAE8A26005EABFC /* ConfigCell.swift */; };
 		895C22091F94F65700B24035 /* Account.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 895C22081F94F65700B24035 /* Account.graphql */; };
 		895C220B1F956F1200B24035 /* ApolloSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C220A1F956F1200B24035 /* ApolloSession.swift */; };
 		895C220D1F9576D900B24035 /* TableViewControllerPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C220C1F9576D900B24035 /* TableViewControllerPosts.swift */; };
@@ -43,6 +44,7 @@
 		891396EB1FAD262F00B1588B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		891396ED1FAD689E00B1588B /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		893B23BC1FAE1F7E005EABFC /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		893B23BE1FAE8A26005EABFC /* ConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCell.swift; sourceTree = "<group>"; };
 		895C22081F94F65700B24035 /* Account.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Account.graphql; sourceTree = "<group>"; };
 		895C220A1F956F1200B24035 /* ApolloSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloSession.swift; sourceTree = "<group>"; };
 		895C220C1F9576D900B24035 /* TableViewControllerPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerPosts.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				89B119881F995BD2002C48A7 /* PostCell.swift */,
+				893B23BE1FAE8A26005EABFC /* ConfigCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				890E76901FA2EA9C00676FF9 /* Posts.swift in Sources */,
 				891396EC1FAD262F00B1588B /* User.swift in Sources */,
 				890E76921FA2EC0700676FF9 /* PostsRequest.swift in Sources */,
+				893B23BF1FAE8A26005EABFC /* ConfigCell.swift in Sources */,
 				890DA8981F9315A2007C022B /* AppDelegate.swift in Sources */,
 				89BA7EEC1FA2D92E0092F6E2 /* UsersRequest.swift in Sources */,
 			);

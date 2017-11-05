@@ -297,8 +297,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConfigCell" id="9ap-bg-6H6" customClass="ConfigCell" customModule="graph_ql" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9ap-bg-6H6" id="yFW-Xf-aeM">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show only my posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnI-RE-2od">
+                                            <rect key="frame" x="8" y="11" width="153" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YL3-oT-1eC">
+                                            <rect key="frame" x="265" y="4" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="switchShowOnlyMyPostsChanged:" destination="9ap-bg-6H6" eventType="valueChanged" id="w2M-7w-OmI"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YL3-oT-1eC" firstAttribute="top" secondItem="yFW-Xf-aeM" secondAttribute="topMargin" constant="-4" id="L0R-Aq-LaI"/>
+                                        <constraint firstItem="bnI-RE-2od" firstAttribute="top" secondItem="yFW-Xf-aeM" secondAttribute="top" constant="11" id="bRM-gR-kAf"/>
+                                        <constraint firstItem="bnI-RE-2od" firstAttribute="leading" secondItem="yFW-Xf-aeM" secondAttribute="leading" constant="8" id="cgq-3W-o4r"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="YL3-oT-1eC" secondAttribute="trailing" constant="-2" id="orC-vY-cyu"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="91" id="K8s-sP-q5G" customClass="PostCell" customModule="graph_ql" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="91"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K8s-sP-q5G" id="ap7-eQ-mkp">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>

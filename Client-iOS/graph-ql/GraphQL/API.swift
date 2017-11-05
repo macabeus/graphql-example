@@ -215,16 +215,23 @@ public final class CreateUserMutation: GraphQLMutation {
 
 public final class GetPostsQuery: GraphQLQuery {
   public static let operationString =
-    "query GetPosts {\n  posts {\n    __typename\n    id\n    title\n    body\n    countLikes\n    liked\n    user {\n      __typename\n      name\n    }\n  }\n}"
+    "query GetPosts($userId: Int) {\n  posts(userId: $userId) {\n    __typename\n    id\n    title\n    body\n    countLikes\n    liked\n    user {\n      __typename\n      name\n    }\n  }\n}"
 
-  public init() {
+  public var userId: Int?
+
+  public init(userId: Int? = nil) {
+    self.userId = userId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["userId": userId]
   }
 
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes = ["RootQueryType"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("posts", type: .list(.object(Post.selections))),
+      GraphQLField("posts", arguments: ["userId": GraphQLVariable("userId")], type: .list(.object(Post.selections))),
     ]
 
     public var snapshot: Snapshot
