@@ -1011,7 +1011,7 @@
             {
               "type": {
                 "ofType": null,
-                "name": "ID",
+                "name": "Int",
                 "kind": "SCALAR"
               },
               "name": "id",
@@ -1306,7 +1306,7 @@
             {
               "type": {
                 "ofType": null,
-                "name": "ID",
+                "name": "Int",
                 "kind": "SCALAR"
               },
               "name": "id",

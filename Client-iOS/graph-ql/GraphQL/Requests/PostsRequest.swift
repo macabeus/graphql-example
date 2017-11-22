@@ -26,7 +26,7 @@ class PostsRequest {
             }
 
             let postsStruct = posts.flatMap { post -> Post? in
-                guard let idString = post?.id, let id = Int(idString) else { return nil }
+                guard let id = post?.id else { return nil }
 
                 return Post(
                     id: id,
@@ -53,8 +53,7 @@ class PostsRequest {
                 return
             }
 
-            guard let postIdString = result?.data?.createPost?.id,
-                let postId = Int(postIdString) else {
+            guard let postId = result?.data?.createPost?.id else {
                 completion(.error(.withoutData))
                 return
             }

@@ -35,8 +35,7 @@ class UsersRequest {
 
             guard
                 let token = result?.data?.login?.token,
-                let userIdString = result?.data?.login?.user?.id,
-                let userId = Int(userIdString) else {
+                let userId = result?.data?.login?.user?.id else {
                 completion(.error(.withoutData))
                 return
             }

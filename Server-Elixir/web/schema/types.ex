@@ -3,7 +3,7 @@ defmodule Myapp.Schema.Types do
   use Absinthe.Ecto, repo: Myapp.Repo
 
   object :user do
-    field :id, :id
+    field :id, :integer
     field :name, :string
     field :username, :string
     field :posts, list_of(:post), resolve: assoc(:posts)
@@ -11,7 +11,7 @@ defmodule Myapp.Schema.Types do
   end
 
   object :post do
-    field :id, :id
+    field :id, :integer
     field :title, :string
     field :body, :string
     field :user, :user, resolve: assoc(:user)

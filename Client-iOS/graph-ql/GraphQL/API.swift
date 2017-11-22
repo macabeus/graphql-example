@@ -95,7 +95,7 @@ public final class UserLoginMutation: GraphQLMutation {
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("id", type: .scalar(GraphQLID.self)),
+          GraphQLField("id", type: .scalar(Int.self)),
         ]
 
         public var snapshot: Snapshot
@@ -104,7 +104,7 @@ public final class UserLoginMutation: GraphQLMutation {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID? = nil) {
+        public init(id: Int? = nil) {
           self.init(snapshot: ["__typename": "User", "id": id])
         }
 
@@ -117,9 +117,9 @@ public final class UserLoginMutation: GraphQLMutation {
           }
         }
 
-        public var id: GraphQLID? {
+        public var id: Int? {
           get {
-            return snapshot["id"] as? GraphQLID
+            return snapshot["id"] as? Int
           }
           set {
             snapshot.updateValue(newValue, forKey: "id")
@@ -179,7 +179,7 @@ public final class CreateUserMutation: GraphQLMutation {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .scalar(GraphQLID.self)),
+        GraphQLField("id", type: .scalar(Int.self)),
       ]
 
       public var snapshot: Snapshot
@@ -188,7 +188,7 @@ public final class CreateUserMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID? = nil) {
+      public init(id: Int? = nil) {
         self.init(snapshot: ["__typename": "User", "id": id])
       }
 
@@ -201,9 +201,9 @@ public final class CreateUserMutation: GraphQLMutation {
         }
       }
 
-      public var id: GraphQLID? {
+      public var id: Int? {
         get {
-          return snapshot["id"] as? GraphQLID
+          return snapshot["id"] as? Int
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")
@@ -258,7 +258,7 @@ public final class GetPostsQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .scalar(GraphQLID.self)),
+        GraphQLField("id", type: .scalar(Int.self)),
         GraphQLField("title", type: .scalar(String.self)),
         GraphQLField("body", type: .scalar(String.self)),
         GraphQLField("countLikes", type: .scalar(Int.self)),
@@ -272,7 +272,7 @@ public final class GetPostsQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID? = nil, title: String? = nil, body: String? = nil, countLikes: Int? = nil, liked: Bool? = nil, user: User? = nil) {
+      public init(id: Int? = nil, title: String? = nil, body: String? = nil, countLikes: Int? = nil, liked: Bool? = nil, user: User? = nil) {
         self.init(snapshot: ["__typename": "Post", "id": id, "title": title, "body": body, "countLikes": countLikes, "liked": liked, "user": user.flatMap { $0.snapshot }])
       }
 
@@ -285,9 +285,9 @@ public final class GetPostsQuery: GraphQLQuery {
         }
       }
 
-      public var id: GraphQLID? {
+      public var id: Int? {
         get {
-          return snapshot["id"] as? GraphQLID
+          return snapshot["id"] as? Int
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")
@@ -426,7 +426,7 @@ public final class CreatePostMutation: GraphQLMutation {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .scalar(GraphQLID.self)),
+        GraphQLField("id", type: .scalar(Int.self)),
       ]
 
       public var snapshot: Snapshot
@@ -435,7 +435,7 @@ public final class CreatePostMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID? = nil) {
+      public init(id: Int? = nil) {
         self.init(snapshot: ["__typename": "Post", "id": id])
       }
 
@@ -448,9 +448,9 @@ public final class CreatePostMutation: GraphQLMutation {
         }
       }
 
-      public var id: GraphQLID? {
+      public var id: Int? {
         get {
-          return snapshot["id"] as? GraphQLID
+          return snapshot["id"] as? Int
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")
