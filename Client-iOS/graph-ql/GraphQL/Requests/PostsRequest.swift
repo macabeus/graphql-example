@@ -26,16 +26,14 @@ class PostsRequest {
             }
 
             let postsStruct = posts.flatMap { post -> Post? in
-                guard let id = post?.id else { return nil }
-
                 return Post(
-                    id: id,
-                    name: post?.title ?? "No title",
-                    body: post?.body ?? "",
-                    countLikes: post?.countLikes ?? 0,
-                    liked: post?.liked ?? false,
+                    id: post?.id,
+                    name: post?.title,
+                    body: post?.body,
+                    countLikes: post?.countLikes,
+                    liked: post?.liked,
                     author: User(
-                        name: post?.user?.name ?? "Unkown"
+                        name: post?.user?.name
                     )
                 )
             }
