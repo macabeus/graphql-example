@@ -1,10 +1,10 @@
 query GetPosts($userId: Int) {
     posts(userId: $userId) {
-        id,
-        title,
-        body,
-        countLikes,
-        liked,
+        id
+        title
+        body
+        countLikes
+        liked
         user {
             name
         }
