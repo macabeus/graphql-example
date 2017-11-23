@@ -11,6 +11,7 @@ import Foundation
 class PostsRequest {
     private init() {}
 
+    // MARK: Fetch
     static func fetch(userId: Int? = nil, completion: @escaping (RequestResult<[Post]>) -> Void) {
         let query = GetPostsQuery(userId: userId)
 
@@ -20,28 +21,33 @@ class PostsRequest {
                 return
             }
 
-            guard let posts = result?.data?.posts else {
+            guard let postsRaw = result?.data?.posts else {
                 completion(.error(.withoutData))
                 return
             }
 
-            let postsStruct = posts.flatMap { post -> Post? in
-                return Post(
-                    id: post?.id,
-                    name: post?.title,
-                    body: post?.body,
-                    countLikes: post?.countLikes,
-                    liked: post?.liked,
-                    author: User(
-                        name: post?.user?.name
-                    )
-                )
-            }
+            let posts = fetchParse(posts: postsRaw)
 
-            completion(.success(postsStruct))
+            completion(.success(posts))
         }
     }
 
+    static func fetchParse(posts: [GetPostsQuery.Data.Post?]) -> [Post] {
+        return posts.flatMap { post -> Post? in
+            return Post(
+                id: post?.id,
+                name: post?.title,
+                body: post?.body,
+                countLikes: post?.countLikes,
+                liked: post?.liked,
+                author: User(
+                    name: post?.user?.name
+                )
+            )
+        }
+    }
+
+    // MARK: Create post
     static func createPost(title: String, body: String, completion: @escaping (RequestResult<Int>) -> Void) {
         let mutation = CreatePostMutation(title: title, body: body)
 
@@ -60,6 +66,7 @@ class PostsRequest {
         }
     }
 
+    // MARK: Create like
     static func CreateLike(post: Post, completion: @escaping (RequestResult<Int>) -> Void) {
         let mutation = CreateLikeMutation(postId: post.id)
 
@@ -78,6 +85,7 @@ class PostsRequest {
         }
     }
 
+    // MARK: Delete Like
     static func DeleteLike(post: Post, completion: @escaping (RequestResult<Int>) -> Void) {
         let mutation = DeleteLikeMutation(postId: post.id)
 

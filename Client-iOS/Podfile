@@ -7,6 +7,7 @@ target 'graph-ql' do
 
   # Pods for graph-ql
   pod 'Apollo', '0.7.0-alpha.11'
-  #pod 'Apollo', '~> 0.6.0'
 
+  target 'graph-qlTests' do
+  end
 end

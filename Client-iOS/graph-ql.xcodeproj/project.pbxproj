@@ -20,6 +20,7 @@
 		895C22091F94F65700B24035 /* Account.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 895C22081F94F65700B24035 /* Account.graphql */; };
 		895C220B1F956F1200B24035 /* ApolloSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C220A1F956F1200B24035 /* ApolloSession.swift */; };
 		895C220D1F9576D900B24035 /* TableViewControllerPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C220C1F9576D900B24035 /* TableViewControllerPosts.swift */; };
+		8997BBA51FC6640200386141 /* PostsRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8997BBA41FC6640200386141 /* PostsRequestsTests.swift */; };
 		89AFF3CA1F94E56B00D07A30 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 89AFF3C91F94E56B00D07A30 /* schema.json */; };
 		89AFF3CE1F94E5FE00D07A30 /* Posts.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 89AFF3CD1F94E5FE00D07A30 /* Posts.graphql */; };
 		89AFF3D01F94F54400D07A30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AFF3CF1F94F54400D07A30 /* LoginViewController.swift */; };
@@ -27,10 +28,28 @@
 		89B119891F995BD2002C48A7 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B119881F995BD2002C48A7 /* PostCell.swift */; };
 		89BA7EEC1FA2D92E0092F6E2 /* UsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA7EEB1FA2D92E0092F6E2 /* UsersRequest.swift */; };
 		89D96B0D1F96836200F5E777 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D96B0C1F96836200F5E777 /* CreateAccountViewController.swift */; };
+		89FC006D1FC665E400D807BD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890DA8AA1F931F81007C022B /* API.swift */; };
+		89FC006E1FC6673A00D807BD /* PostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E76911FA2EC0700676FF9 /* PostsRequest.swift */; };
+		89FC006F1FC6677000D807BD /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B119821F98659E002C48A7 /* ErrorHandling.swift */; };
+		89FC00701FC6678800D807BD /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E768F1FA2EA9C00676FF9 /* Posts.swift */; };
+		89FC00711FC6678A00D807BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891396EB1FAD262F00B1588B /* User.swift */; };
+		89FC00721FC6679A00D807BD /* ApolloSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C220A1F956F1200B24035 /* ApolloSession.swift */; };
 		99B9056DBED5C06CB7235023 /* Pods_graph_ql.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06694949DD3E2971D4018853 /* Pods_graph_ql.framework */; };
+		CEBA86475C219266E5F1D632 /* Pods_graph_ql_graph_qlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A3C799920D833A3C733E27 /* Pods_graph_ql_graph_qlTests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8997BBA71FC6640200386141 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 890DA88C1F9315A2007C022B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 890DA8931F9315A2007C022B;
+			remoteInfo = "graph-ql";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		05E2B35F48AF2C892F2F2CAE /* Pods-graph-ql-graph-qlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-graph-ql-graph-qlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-graph-ql-graph-qlTests/Pods-graph-ql-graph-qlTests.debug.xcconfig"; sourceTree = "<group>"; };
 		06694949DD3E2971D4018853 /* Pods_graph_ql.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_graph_ql.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B5376122B8725164FAEF9F /* Pods-graph-ql.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-graph-ql.release.xcconfig"; path = "Pods/Target Support Files/Pods-graph-ql/Pods-graph-ql.release.xcconfig"; sourceTree = "<group>"; };
 		890DA8941F9315A2007C022B /* graph-ql.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "graph-ql.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +67,9 @@
 		895C22081F94F65700B24035 /* Account.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Account.graphql; sourceTree = "<group>"; };
 		895C220A1F956F1200B24035 /* ApolloSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloSession.swift; sourceTree = "<group>"; };
 		895C220C1F9576D900B24035 /* TableViewControllerPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerPosts.swift; sourceTree = "<group>"; };
+		8997BBA21FC6640200386141 /* graph-qlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "graph-qlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8997BBA41FC6640200386141 /* PostsRequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRequestsTests.swift; sourceTree = "<group>"; };
+		8997BBA61FC6640200386141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89AFF3C91F94E56B00D07A30 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		89AFF3CD1F94E5FE00D07A30 /* Posts.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Posts.graphql; sourceTree = "<group>"; };
 		89AFF3CF1F94F54400D07A30 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +77,8 @@
 		89B119881F995BD2002C48A7 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		89BA7EEB1FA2D92E0092F6E2 /* UsersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRequest.swift; sourceTree = "<group>"; };
 		89D96B0C1F96836200F5E777 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		91A3C799920D833A3C733E27 /* Pods_graph_ql_graph_qlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_graph_ql_graph_qlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B32DADD2F3F9FE0327C31B /* Pods-graph-ql-graph-qlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-graph-ql-graph-qlTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-graph-ql-graph-qlTests/Pods-graph-ql-graph-qlTests.release.xcconfig"; sourceTree = "<group>"; };
 		A9E5519AB056B2FF065E3BAC /* Pods-graph-ql.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-graph-ql.debug.xcconfig"; path = "Pods/Target Support Files/Pods-graph-ql/Pods-graph-ql.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +91,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8997BB9F1FC6640200386141 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBA86475C219266E5F1D632 /* Pods_graph_ql_graph_qlTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -74,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				06694949DD3E2971D4018853 /* Pods_graph_ql.framework */,
+				91A3C799920D833A3C733E27 /* Pods_graph_ql_graph_qlTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -82,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				890DA8961F9315A2007C022B /* graph-ql */,
+				8997BBA31FC6640200386141 /* graph-qlTests */,
 				890DA8951F9315A2007C022B /* Products */,
 				CA2409D3A87B7590302A7BB1 /* Pods */,
 				2328839FE73206F0104A61BC /* Frameworks */,
@@ -92,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				890DA8941F9315A2007C022B /* graph-ql.app */,
+				8997BBA21FC6640200386141 /* graph-qlTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +153,15 @@
 				891396EB1FAD262F00B1588B /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8997BBA31FC6640200386141 /* graph-qlTests */ = {
+			isa = PBXGroup;
+			children = (
+				8997BBA41FC6640200386141 /* PostsRequestsTests.swift */,
+				8997BBA61FC6640200386141 /* Info.plist */,
+			);
+			path = "graph-qlTests";
 			sourceTree = "<group>";
 		};
 		89AFF3CC1F94E5B100D07A30 /* GraphQL */ = {
@@ -169,6 +213,8 @@
 			children = (
 				A9E5519AB056B2FF065E3BAC /* Pods-graph-ql.debug.xcconfig */,
 				60B5376122B8725164FAEF9F /* Pods-graph-ql.release.xcconfig */,
+				05E2B35F48AF2C892F2F2CAE /* Pods-graph-ql-graph-qlTests.debug.xcconfig */,
+				A1B32DADD2F3F9FE0327C31B /* Pods-graph-ql-graph-qlTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -197,6 +243,27 @@
 			productReference = 890DA8941F9315A2007C022B /* graph-ql.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8997BBA11FC6640200386141 /* graph-qlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8997BBAB1FC6640200386141 /* Build configuration list for PBXNativeTarget "graph-qlTests" */;
+			buildPhases = (
+				0E3B339CFE27762F6C513A59 /* [CP] Check Pods Manifest.lock */,
+				8997BB9E1FC6640200386141 /* Sources */,
+				8997BB9F1FC6640200386141 /* Frameworks */,
+				8997BBA01FC6640200386141 /* Resources */,
+				63D8D701F900A45D144DBC60 /* [CP] Embed Pods Frameworks */,
+				B5BD4590721C9FA3A360A2B6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8997BBA81FC6640200386141 /* PBXTargetDependency */,
+			);
+			name = "graph-qlTests";
+			productName = "graph-qlTests";
+			productReference = 8997BBA21FC6640200386141 /* graph-qlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -210,6 +277,11 @@
 					890DA8931F9315A2007C022B = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+					};
+					8997BBA11FC6640200386141 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 890DA8931F9315A2007C022B;
 					};
 				};
 			};
@@ -227,6 +299,7 @@
 			projectRoot = "";
 			targets = (
 				890DA8931F9315A2007C022B /* graph-ql */,
+				8997BBA11FC6640200386141 /* graph-qlTests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,6 +314,13 @@
 				890DA89F1F9315A2007C022B /* Assets.xcassets in Resources */,
 				890DA89D1F9315A2007C022B /* Main.storyboard in Resources */,
 				895C22091F94F65700B24035 /* Account.graphql in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8997BBA01FC6640200386141 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +345,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		0E3B339CFE27762F6C513A59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-graph-ql-graph-qlTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		13B536B284F69322904C495B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +376,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-graph-ql/Pods-graph-ql-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63D8D701F900A45D144DBC60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-graph-ql-graph-qlTests/Pods-graph-ql-graph-qlTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-graph-ql-graph-qlTests/Pods-graph-ql-graph-qlTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		890DA8A91F931B44007C022B /* Generate Apollo GraphQL API */ = {
@@ -312,6 +428,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-graph-ql/Pods-graph-ql-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B5BD4590721C9FA3A360A2B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-graph-ql-graph-qlTests/Pods-graph-ql-graph-qlTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -337,7 +468,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8997BB9E1FC6640200386141 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89FC00721FC6679A00D807BD /* ApolloSession.swift in Sources */,
+				89FC006D1FC665E400D807BD /* API.swift in Sources */,
+				89FC006F1FC6677000D807BD /* ErrorHandling.swift in Sources */,
+				89FC00711FC6678A00D807BD /* User.swift in Sources */,
+				89FC00701FC6678800D807BD /* Posts.swift in Sources */,
+				89FC006E1FC6673A00D807BD /* PostsRequest.swift in Sources */,
+				8997BBA51FC6640200386141 /* PostsRequestsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8997BBA81FC6640200386141 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 890DA8931F9315A2007C022B /* graph-ql */;
+			targetProxy = 8997BBA71FC6640200386141 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		890DA89B1F9315A2007C022B /* Main.storyboard */ = {
@@ -490,6 +643,40 @@
 			};
 			name = Release;
 		};
+		8997BBA91FC6640200386141 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05E2B35F48AF2C892F2F2CAE /* Pods-graph-ql-graph-qlTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56KUK57QCP;
+				INFOPLIST_FILE = "graph-qlTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "macabeus.graph-qlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graph-ql.app/graph-ql";
+			};
+			name = Debug;
+		};
+		8997BBAA1FC6640200386141 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1B32DADD2F3F9FE0327C31B /* Pods-graph-ql-graph-qlTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56KUK57QCP;
+				INFOPLIST_FILE = "graph-qlTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "macabeus.graph-qlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graph-ql.app/graph-ql";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -507,6 +694,15 @@
 			buildConfigurations = (
 				890DA8A71F9315A2007C022B /* Debug */,
 				890DA8A81F9315A2007C022B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8997BBAB1FC6640200386141 /* Build configuration list for PBXNativeTarget "graph-qlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8997BBA91FC6640200386141 /* Debug */,
+				8997BBAA1FC6640200386141 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
